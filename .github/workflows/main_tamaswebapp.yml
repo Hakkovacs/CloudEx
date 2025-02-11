@@ -35,6 +35,10 @@ jobs:
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
+      - name: Run type checker
+        run: |
+          pyright ./
+
       - name: Run tests
         run: |
           pytest ./ --junitxml=reports/test-results.xml
