@@ -39,7 +39,7 @@ async def product_list(
 ):
     products = load_products_from_db()
     products = filter_products(products, s, min_price, max_price)
-    products = sort_products(products, 1)
+    products = sort_products(products, sort_by)
 
     return templates.TemplateResponse(
         "product_list.html",
